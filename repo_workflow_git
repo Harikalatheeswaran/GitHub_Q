@@ -1,0 +1,35 @@
+#!/bin/bash
+# =============================================
+# Crypto Repo One-Click Workflow
+# Place this file named "g" (no extension) inside your Cryptography folder
+# Double-click it or run ./g in Git Bash → does everything safely
+# =============================================
+
+echo "🚀 Crypto Repo Workflow Starting..."
+
+# 1. Always pull latest first
+echo "📥 Pulling latest changes..."
+git pull || { echo "❌ Pull failed"; exit 1; }
+
+# 2. Ask for commit message
+read -p "📝 Enter commit message (or press Enter to open editor): " message
+
+if [ -z "$message" ]; then
+    git commit -a   # opens editor (VS Code if configured)
+else
+    git commit -a -m "$message"
+fi
+
+# 3. Pull again just in case someone pushed in the last few minutes
+echo "🔄 Final pull (safety check)..."
+git pull --no-rebase || { 
+    echo "⚠️  Merge conflict detected! Fix manually then run git push"
+    exit 1
+}
+
+# 4. Push
+echo "📤 Pushing to GitHub..."
+git push || { echo "❌ Push failed"; exit 1; }
+
+echo "🎉 All done! Your repo is now perfectly in sync."
+read -p "Press Enter to close..."
