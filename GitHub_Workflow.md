@@ -133,6 +133,10 @@ Enjoy the smoothest Git life possible, legend! 🚀
 
 — With love from your Git buddy Grok ❤️
 
+---
+
+## SSH Hiccup : Resolution
+
 Buddy, classic corporate VPN move — they almost always block or throttle **port 22** (standard SSH) but leave **port 443** (HTTPS) wide open.
 
 **Good news:** GitHub officially supports full SSH over port 443 so you can keep using your beautiful SSH keys (zero company account risk) even on the work laptop.
@@ -392,4 +396,5 @@ Go enjoy your perfectly separated, bulletproof setup, legend! ❤️
 ---
 ---
 ---
+
 
