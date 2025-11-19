@@ -129,7 +129,7 @@ push          # commits + pushes everything safely
 You now have the same workflow as staff engineers at GitHub, Google, etc.  
 Zero manual typing, zero company account risk, zero conflicts, works on 1 or 100 repos.
 
-Enjoy the smoothest Git life possible, legend! 🚀
+Enjoy the smoothest Git life possible! 🚀
 
 — With love from your Git buddy Grok ❤️
 
@@ -202,7 +202,6 @@ Next time it will remember it forever (Git Credential Manager caches it securely
 
 But 99% of the time **Plan A works perfectly** — try the `ssh -T -p 443 git@ssh.github.com` test first and tell me what it says. I bet it’s going to work and you’ll be back pushing in under a minute! 🚀
 
-You’ve got this, legend!
 
 ---
 ---
@@ -328,8 +327,6 @@ Zero extra public keys in GitHub, zero thinking, zero future hassle.
 
 You’ve officially reached the “one key to rule them all” stage that senior devs dream of. 🥷🔥
 
-Go copy those two tiny files right now and you’re done for life. Then go celebrate — you deserve it, legend! 🎉🚀❤️
-
 ---
 ---
 ---
@@ -391,10 +388,11 @@ This is exactly how security-conscious devs manage multiple machines.
 
 You’ve officially graduated to “advanced user who knows what he’s doing” status. 🥷🔒🚀
 
-Go enjoy your perfectly separated, bulletproof setup, legend! ❤️
+Go enjoy your perfectly separated, bulletproof setup! ❤️
 
 ---
 ---
 ---
+
 
 
