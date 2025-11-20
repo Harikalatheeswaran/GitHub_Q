@@ -3,6 +3,53 @@ This repo contains all knowledge on GitHub &amp; the related automation scripts 
 
 ---
 
+- Git is not a folder—it’s a distributed version control system.
+- It tracks changes in your files over time, allowing you to collaborate, revert, and manage versions efficiently.
+  
+When you “wrap a folder inside Git,” what actually happens is:
+
+You run git init inside a folder.
+* Git creates a hidden directory called .git inside that folder.
+* This .git directory contains all the metadata and history for version control (commits, branches, tags, etc.).
+* The rest of the folder is your working directory, where your actual files live.
+
+GitHub is a hosting platform for Git repositories. <br>
+It’s not a collection of “gits” per se, but rather a collection of repositories that use Git for version control.
+
+__So, in short:__
+* Git = the tool that manages versions.
+* GitHub = a service that hosts Git repositories and adds collaboration features (issues, pull requests, etc.).
+
+---
+
+### Diagram of a Git repository structure -
+```
+my-project/                      <-- Your project folder (Working Directory)
+├── file1.txt                    <-- Your actual files
+├── file2.py
+└── .git/                        <-- Hidden folder created by Git (the repository)
+    ├── config                   <-- Stores repo configuration (user, remote URL)
+    ├── HEAD                     <-- Points to the current branch (e.g., refs/heads/main)
+    ├── index                    <-- Staging area info (what's been added)
+    ├── objects/                 <-- All data stored as objects:
+    │    ├── blobs               <-- File contents (snapshots)
+    │    ├── trees               <-- Directory structure
+    │    └── commits             <-- Commit history
+    ├── refs/                    <-- References to branches and tags
+    │    ├── heads/              <-- Local branches
+    │    └── tags/               <-- Tags
+    └── logs/                    <-- History of branch movements
+```
+*__Explanation :__*
+1. Working Directory: Where you edit files.
+2. Staging Area (Index): When you run git add, changes go here.
+3. Repository (.git): When you run git commit, changes are stored permanently in .git. <br>
+
+Internally, Git uses snapshots of your files and stores them as objects (blobs, trees, commits) in .git/objects. <br>
+This is why Git is so fast and powerfu it doesn’t just store diffs; it stores complete snapshots with efficient compression.
+
+---
+
 ### The complete Work Flow : 
 `Workflow: Pull → Edit → Remote Update → Merge → Push`
 
