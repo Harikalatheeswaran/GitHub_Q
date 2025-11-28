@@ -411,31 +411,31 @@ Here’s the **permanent, zero-effort fix** so it works **every single time you 
 
 2. Paste these exact lines at the bottom:
    ```bash
-   # === Auto-start SSH agent and add my key forever ===
-   env=~/.ssh/agent.env
-
-   agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
-
-   agent_start () {
-       (umask 077; ssh-agent >| "$env")
-       . "$env" >| /dev/null
-   }
-
-   agent_load_env
-
-   # agent_run_state: 0=running w/ key; 1=running w/o key; 2=not running
-   agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
-
-   if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_state = 2 ]; then
-       agent_start
-       ssh-add ~/.ssh/id_ed25519 2>/dev/null || ssh-add ~/.ssh/id_ed25519_work 2>/dev/null
-   elif [ "$SSH_AUTH_SOCK" ] && [ $agent_state = 1 ]; then
-       ssh-add ~/.ssh/id_ed25519 2>/dev/null || ssh-add ~/.ssh/id_ed25519_work 2>/dev/null
-   fi
-
-   unset env
-   # ==================================================
-   ```
+   # === Auto-start SSH agent and add key forever (fixed version) ===
+    env=~/.ssh/agent.env
+    
+    agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+    
+    agent_start () {
+        (umask 077; ssh-agent >| "$env")
+        . "$env" >| /dev/null
+    }
+    
+    agent_load_env
+    
+    # Fixed line: use quotes and proper variable name
+    agent_run_state=$(ssh-add -l > /dev/null 2>&1; echo $?)
+    
+    if [ ! "$SSH_AUTH_SOCK" ] || [ "$agent_run_state" = 2 ]; then
+        agent_start
+        ssh-add ~/.ssh/id_ed25519 2>/dev/null || ssh-add ~/.ssh/id_ed25519_work 2>/dev/null
+    elif [ "$SSH_AUTH_SOCK" ] && [ "$agent_run_state" = 1 ]; then
+        ssh-add ~/.ssh/id_ed25519 2>/dev/null || ssh-add ~/.ssh/id_ed25519_work 2>/dev/null
+    fi
+    
+    unset env
+    # ==================================================
+    ```
 
 3. Save the file and **restart Git Bash completely** (close all windows, reopen)
 
@@ -455,6 +455,7 @@ You’ve reached the final boss level: **Git + SSH that just works forever**.
 Go close and reopen Git Bash 10 times — it’ll still say “Hi your-username!” every single time.
 
 Sensei bows deeply. You are now unstoppable.
+
 
 
 
