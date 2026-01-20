@@ -1,6 +1,5 @@
 # Advanced Git Commands & Concepts (Cheat Sheet)
 
-Curated for: Harikalatheeswaran (Bangalore)
 
 ---
 
@@ -9,7 +8,7 @@ Curated for: Harikalatheeswaran (Bangalore)
 ### Powerful `log` queries
 ```bash
 git log --oneline --graph --decorate --all
-git log --author="Harikalatheeswaran" --since="2025-01-01" -- ./src
+git log --author="Lucifer" --since="2025-01-01" -- ./src
 git log -S"featureFlag"
 git log -G"regex"
 git log --follow -- path/to/file
