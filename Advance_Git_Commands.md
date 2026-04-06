@@ -67,6 +67,29 @@ git rebase --continue
 ```bash
 git filter-repo --invert-paths --path secrets.txt
 ```
+### Cloning a separate branch say develop
+```bash
+git clone <repo-url>
+cd repo-name
+git checkout develop
+```
+you can also try on of the following commands :
+```bash
+# __________________________________________________________________________________________
+git clone --branch <branch-name> --single-branch <repo-url>
+# __________________________________________________________________________________________
+git clone --branch develop --single-branch https://github.com/user/repo.git
+# __________________________________________________________________________________________
+git clone --branch xyz --single-branch https://github.com/user/repo.git
+# __________________________________________________________________________________________
+# Shalow clone : if you want latest version fo that branch
+git clone --branch <branch-name> --single-branch --depth 1 <repo-url>
+# __________________________________________________________________________________________
+# IF you already coloned the repo, buy you want to shift the branch, then
+git fetch origin <branch-name>
+git checkout <branch-name>
+# __________________________________________________________________________________________
+```
 
 ---
 
