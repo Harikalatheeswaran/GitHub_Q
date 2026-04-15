@@ -100,7 +100,13 @@
      # Delete remote branch
      git push origin --delete ID-69420
      ```
-  
+
+> [!TIP]
+> You can also use the following to switch branches, but checkout is recommended.
+> *`git switch ID-69420    `* <br>
+> Branch should alredy exist.
+> To rename a branch we do :
+> *`git branch -m <new name>`* <br>
 
 
 
