@@ -49,7 +49,7 @@
 > *`git checkout -b ID-69420    `* <br>
 > *`git add .   `*<br>
 > *`git commit -m "ID-69420 : added a new feature"   `*<br>
-> *`git push -u origin xyz123 # this is done only first time push, later you can only use push, pull etc.   `*<br>
+> *`git push -u origin ID-69420 # this is done only first time push, later you can only use push, pull etc.   `*<br>
 
 5. Why we use `-u` for first push:
    - The `-u` => --ser-upstream
