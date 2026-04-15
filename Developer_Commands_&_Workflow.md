@@ -1,4 +1,10 @@
-### *List of commands to know when working in a production environment.*
+<div align=center>
+   <hr>
+   
+   # *List of commands to know when working in a production environment.*
+   
+   <hr>
+</div>
 
 1. When starting to work on repo, we usually clone a repo, by default the `main` brach gets cloned
    ```bash
